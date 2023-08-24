@@ -5,12 +5,12 @@ CREATE DATABASE business_db;
 USE business_db;
 
 -- Creates table for departments with rows
-CREATE TABLE departments(
+CREATE TABLE department(
 id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 name VARCHAR(30) NOT NULL);
 
 -- Creates table for roles with rows
-CREATE TABLE roles(
+CREATE TABLE role(
 id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 title VARCHAR(30) NOT NULL,
 salary DECIMAL(11,2) NOT NULL,
@@ -18,7 +18,7 @@ department_id INT NOT NULL,
 FOREIGN KEY (department_id) REFERENCES departments(id));
 
 -- Creates table for employees with rows
-CREATE TABLE employees(
+CREATE TABLE employee(
 id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 first_name VARCHAR(30) NOT NULL,
 last_name VARCHAR(30) NOT NULL,
