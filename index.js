@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
-const mysql = require('mysql2');
 require("console.table");
+const connection = require('./connection/connection.js')
 
 const Menu = () => {
     // prompts to start

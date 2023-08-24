@@ -1,13 +1,14 @@
 const mysql = require('mysql2');
 
-const db = mysql.createConnection(
+const connection = mysql.createConnection(
     {
         host: 'localhost',
         user: 'root',
-        passworrd: 'root',
-        database: 'business_db'
+        password: 'root',
+        database: 'business_db',
+        port: 8889
     },
     console.log("You've Connected!")
 );
 
-module.exports = db;
+module.exports = connection;
