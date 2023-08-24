@@ -10,17 +10,17 @@ const Menu = () => {
         type: "list",
         message: "What would you like to do",
         choices: [
-          "View All Employees", 
-          "View All Employees By Department", 
-          "View All Employees By Manager", 
+          "View Employees", 
+          "View Employees By Department", 
+          "View Employees By Manager", 
           "Add Employee", 
           "Remove Employee", 
           "Update Employee Role", 
           "Update Employee Manager", 
-          "View All Roles", 
+          "View Roles", 
           "Add Role", 
           "Remove Role", 
-          "View All Departments", 
+          "View Departments", 
           "Add Department", 
           "Remove Department", 
           "View Total Utilized Budget of a Department", 
@@ -29,7 +29,7 @@ const Menu = () => {
       })
       .then((answer) => {
         switch (answer.start) {
-          case "View All Employees":
+          case "View Employees":
             ViewAllEmployees();
             break;
   
@@ -57,7 +57,7 @@ const Menu = () => {
             UpdateEmployeeManager();
             break;
   
-          case "View All Roles":
+          case "View Roles":
             ViewAllRoles();
             break;
   
@@ -69,7 +69,7 @@ const Menu = () => {
             RemoveRole();
             break;
   
-          case "View All Departments":
+          case "View Departments":
             ViewAllDepartments();
             break;
   
@@ -119,31 +119,31 @@ const Menu = () => {
   }
   
   // See employess by department
-  function ViewAllEmployeesByDepartment() {
-    inquirer
-      .prompt({
-        name: "department",
-        type: "list",
-        message: "Which department would you like to view?",
-        choices: [
-          "Sales",
-          "Marketing",
-          "Human Resources",
-          "Operations",
-        ],
-      })
-      .then((answer) => {
-        switch (answer.department) {
-          case "Sales":
-            return myViewEmployeesByDepartment("Sales");
-          case "Marketing":
-            return myViewEmployeesByDepartment("Marketing");
-          case "Human Resources":
-            return myViewEmployeesByDepartment("Human Resources");
-          case "Operations":
-            return myViewEmployeesByDepartment("Operations");
-        }
-      });
+function ViewAllEmployeesByDepartment() {
+  inquirer
+    .prompt({
+      name: "department",
+      type: "list",
+      message: "Which department would you like to view?",
+      choices: ["Sales", "Marketing", "Human Resources", "Operations"],
+    })
+    .then((answer) => {
+      switch (answer.department) {
+        case "Sales":
+          return myViewEmployeesByDepartment("Sales");
+        case "Marketing":
+          return myViewEmployeesByDepartment("Marketing");
+        case "Human Resources":
+          return myViewEmployeesByDepartment("Human Resources");
+        case "Operations":
+          return myViewEmployeesByDepartment("Operations");
+        default:
+          console.log("Invalid department choice");
+      }
+    })
+    .catch((error) => {
+      console.error("An error occurred:", error);
+    });
 
     // Function Display employees by the department they are in
     function myViewEmployeesByDepartment(department) {
@@ -165,8 +165,8 @@ const Menu = () => {
     }
   }
   
-  // Function to see all employees by the Manager assigned
-  function ViewAllEmployeesByManager() {
+  // Function to see all employees by the Manager assignediewAllEmployeesByManager() {
+  function V
     const query = `SELECT 
      employee.id, 
      employee.first_name, 
