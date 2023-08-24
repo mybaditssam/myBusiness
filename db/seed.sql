@@ -1,11 +1,15 @@
-USE company_db;
+-- uses the business_db database
+USE business_db;
 
+-- Seeds departments
 INSERT INTO departments(name)
 VALUES('Sales'),
 ('Marketing'),
 ('Human Resources'),
 ('Operations');
 
+
+-- Seeds Roles
 INSERT INTO roles(title, salary, department_id)
 VALUES('CEO', 150000.00, 4),
 ('Marketing Manager', 70000.00, 2),
@@ -13,6 +17,7 @@ VALUES('CEO', 150000.00, 4),
 ('HR Manager', 60000.00, 3),
 ('Sales Staff', 45000.00, 1);
 
+-- Seeds Employees
 INSERT INTO employees(first_name, last_name, role_id, manager_id)
 VALUES('Samuel', 'Hernandez', 1, NULL),
 ('Michael', 'Newn', 4,2),
